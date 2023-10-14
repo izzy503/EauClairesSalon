@@ -1,8 +1,0 @@
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.csproj.AssemblyReference.cache
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.GeneratedMSBuildEditorConfig.editorconfig
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.AssemblyInfoInputs.cache
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.AssemblyInfo.cs
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.csproj.CoreCompileInputs.cache
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.MvcApplicationPartsAssemblyInfo.cache
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.RazorAssemblyInfo.cache
-/Users/israelpadilla/Desktop/epicodus/EauClairesSalon/obj/Debug/net6.0/EauClairesSalon.RazorAssemblyInfo.cs
