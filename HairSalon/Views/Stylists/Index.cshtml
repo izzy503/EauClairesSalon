@@ -1,4 +1,5 @@
-@model List<Stylist>
+@using EauClaireSalon.Models;
+@model List<Stylist>;
 
 <h1>Stylists</h1>
 <table class="table">
@@ -24,3 +25,6 @@
     }
   </tbody>
 </table>
+
+
+<p>@Html.ActionLink("Add a new Stylist", "Create")</p>
