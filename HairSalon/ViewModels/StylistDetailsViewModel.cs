@@ -1,17 +1,7 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace EauClaireSalon.Models
+using EauClaireSalon.Models;
+namespace EauClaireSalon.ViewModels;
+public class StylistDetailsViewModel
 {
-  public class Stylist
-  {
-    public int StylistId { get; set; }
-
-    [Required]
-    public string Name { get; set; }
-
-    [Required]
-    public string Specialty { get; set; }
-  }
-}
-
+  public Stylist Stylist { get; set; }
+  public List<Client> Clients { get; set; }
