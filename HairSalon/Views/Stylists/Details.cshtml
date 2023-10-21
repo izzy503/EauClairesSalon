@@ -1,32 +1,28 @@
-@using EauClaireSalon.Models;
-@model Stylist;
+@model EauClaireSalon.ViewModels.StylistDetailsViewModel;
 
 <h1>Stylist Details</h1>
-<dl class="row">
-  <dt class="col-sm-2">Name</dt>
-  <dd class="col-sm-10">@Model.Name</dd>
-  <dt class="col-sm-2">Specialty</dt>
-  <dd class="col-sm-10">@Model.Specialty</dd>
-</dl>
+<div class="border">
+  <h2>@Html.DisplayNameFor(model => model.Stylist.Name): @Html.DisplayFor(model => model.Stylist.Name)</h2>
+  <ul>
+    <li>@Html.DisplayNameFor(model => model.Stylist.Specialty): @Html.DisplayFor(model => model.Stylist.Specialty)</li>
+  </ul>
 
-<h2>Clients</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach (var client in Model.Clients)
-    {
-      <tr>
-        <td>@client.Name</td>
-      </tr>
-    }
-  </tbody>
-</table>
+  <h2>Clients</h2>
+  <ul>
+  @if(Model.Clients.Count == 0)
+  {
+    <p>No Clients found.</p>
+  }
+  else
+  {
+      @foreach (var client in Model.Clients)
+      {
+          <li>Name: @client.Name</li>
+      }
+  }
+  </ul>
+</div>
 
-<p>
-  <a asp-action="Edit" asp-route-id="@Model.StylistId">Edit</a> |
-  <a asp-action="Index">Back to List</a>
-</p>
+<p>@Html.ActionLink("Add new Client", "Create", "Clients", new { StylistId = Model.Stylist.StylistId })</p>
+
+<p>@Html.ActionLink("Back to Stylists List", "Index")</p>

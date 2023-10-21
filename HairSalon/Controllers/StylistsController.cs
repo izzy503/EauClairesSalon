@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using EauClaireSalon.ViewModels;
 using EauClaireSalon.Models;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,20 +16,17 @@ namespace EauClaireSalon.Controllers
       _context = context;
     }
 
-    // GET: Stylists
     public ActionResult Index()
     {
       var stylists = _context.Stylists.ToList();
       return View(stylists);
     }
 
-    // GET: Stylists/Create
     public ActionResult Create()
     {
       return View();
     }
 
-    // Post: Stylists/Create
     [HttpPost]
     public ActionResult Create(Stylist stylist)
     {
@@ -44,8 +42,15 @@ namespace EauClaireSalon.Controllers
     [HttpGet]
     public ActionResult Details(int id)
     {
-      Stylist stylist = _context.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      return View(stylist);
+      var stylist = _context.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      var clients = _context.Clients.Where(c => c.StylistId == id).ToList();
+
+      var viewModel = new StylistDetailsViewModel
+      {
+        Stylist = stylist,
+        Clients = clients
+      };
+      return View(viewModel);
     }
   }
 }
