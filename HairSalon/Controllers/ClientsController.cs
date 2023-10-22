@@ -22,23 +22,19 @@ namespace EauClaireSalon.Controllers
         }
 
         // GET: Clients/Create
-        public ActionResult Create()
+        public ActionResult Create(int stylistId)
         {
-            return View();
+            var client = new Client { StylistId = stylistId };
+            return View(client);
         }
 
         // POST: Clients/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Client client)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(client);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(client);
+            _context.Clients.Add(client);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Stylists");
         }
 
         // GET: Clients/Details/5

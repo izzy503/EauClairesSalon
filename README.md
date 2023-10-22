@@ -43,6 +43,49 @@ dotnet run
 
 The application should now be running locally at http://localhost:5000 (or https://localhost:5001 with HTTPS).
 
+To Setup and create your own appsettings.json and .sql file do the following if you have not done this yet 
+
+1. Clone the Repository:
+
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+2. Recreate appsettings.json:
+You will need to create or modify the appsettings.json file with your application's configuration settings. You can typically copy the appsettings.example.json provided and update it with the necessary values, such as the database connection string.
+
+3.Recreate the Database:
+In this example, we'll assume you're using MySQL as your database system.
+
+a. Using MySQL Workbench (GUI):
+* Open MySQL Workbench and connect to your MySQL server.
+* Open a SQL script file or a query tab.
+* Load the provided .sql file using the File > Run SQL Script... option.
+* Select the .sql file and execute it.
+
+b. Using the Terminal (Command Line):
+* Navigate to the directory where your .sql file is located.
+* Log in to MySQL using the command:
+
+mysql -u your-username -p
+
+* You'll be prompted to enter your MySQL password.
+* After logging in, select the database where you want to import data:
+
+USE your-database;
+
+* import the .sql file by running:
+
+source your-file.sql
+
+* Replace your-database with your database name and your-file.sql with the path to your .sql file.
+
+4. Install Dependencies and Run the Application:
+Build and run your application using dotnet run:
+
+dotnet run
+
+By following these installation steps, you'll set up the project with the required configuration settings and a database created from the provided .sql file. Make sure to customize the instructions according to your specific project and environment.
+
 ## Usage
 
 Open your web browser and go to http://localhost:5000 (or https://localhost:5001).

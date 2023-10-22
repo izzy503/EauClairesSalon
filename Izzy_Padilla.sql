@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `Client`
+-- Table structure for table `Clients`
 --
 
-DROP TABLE IF EXISTS `Client`;
+DROP TABLE IF EXISTS `Clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Client` (
-  `ClientId` int unsigned NOT NULL,
+  `ClientId` int unsigned NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) DEFAULT NULL,
   `StylistId` int unsigned NOT NULL,
   `Stylist` varchar(255) DEFAULT NULL,
@@ -35,9 +35,9 @@ CREATE TABLE `Client` (
 -- Dumping data for table `Client`
 --
 
-LOCK TABLES `Client` WRITE;
-/*!40000 ALTER TABLE `Client` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Client` ENABLE KEYS */;
+LOCK TABLES `Clients` WRITE;
+/*!40000 ALTER TABLE `Clients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

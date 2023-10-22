@@ -5,3 +5,4 @@ public class StylistDetailsViewModel
 {
   public Stylist Stylist { get; set; }
   public List<Client> Clients { get; set; }
+}

@@ -1,22 +1,16 @@
+@using EauClaireSalon.Models;
+@model Client;
+
+<h1> Add a new Client</h1>
+
+@using (Html.BeginForm())
 {
-"profiles": {
-"development": {
-"commandName": "Project",
-"dotnetRunMessages": true,
-"launchBrowser": true,
-"applicationUrl": "https://localhost:5001;http://localhost:5000",
-"environmentVariables": {
-"ASPNETCORE_ENVIRONMENT": "Development"
+
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.HiddenFor(model => model.StylistId)
+  <input type="submit" value="Create" />
 }
-},
-"production": {
-"commandName": "Project",
-"dotnetRunMessages": true,
-"launchBrowser": true,
-"applicationUrl": "https://localhost:5001;http://localhost:5000",
-"environmentVariables": {
-"ASPNETCORE_ENVIRONMENT": "Production"
-}
-}
-}
-}
+
+<p>@Html.ActionLink("Stylists List", "Index", "Stylists")</p>

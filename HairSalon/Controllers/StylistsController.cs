@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EauClaireSalon.ViewModels;
 using EauClaireSalon.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -32,7 +33,7 @@ namespace EauClaireSalon.Controllers
     {
       if (ModelState.IsValid)
       {
-        _context.Add(stylist);
+        _context.Stylists.Add(stylist);
         _context.SaveChanges();
 
       }
@@ -43,7 +44,7 @@ namespace EauClaireSalon.Controllers
     public ActionResult Details(int id)
     {
       var stylist = _context.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
-      var clients = _context.Clients.Where(c => c.StylistId == id).ToList();
+      List<Client> clients = _context.Clients.Where(c => c.StylistId == id).ToList();
 
       var viewModel = new StylistDetailsViewModel
       {
